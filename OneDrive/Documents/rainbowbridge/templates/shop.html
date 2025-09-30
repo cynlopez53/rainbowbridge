@@ -1,0 +1,17 @@
+<h1>Pawfect Keepsakes 🧸</h1>
+<div class="item-grid">
+  {% for item in items %}
+    <div class="item-card">
+      <img src="{{ url_for('static', filename='items/' + item.image) }}" alt="{{ item.name }}">
+      <h3>{{ item.name }}</h3>
+      <p>{{ item.category }}</p>
+      {% if item.price %}
+        <p>${{ item.price }}</p>
+        <button>Add to Tribute</button>
+      {% else %}
+        <p>Free</p>
+        <button>Add to Tribute</button>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
