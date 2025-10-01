@@ -1,10 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Rainbow Bridge Tribute Wall</title>
+    <meta charset="UTF-8">
+    <title>Tribute Wall</title>
 </head>
 <body>
-    <h1>Welcome to the Tribute Wall 🌈</h1>
-    <p>Here you can honor your beloved pets.</p>
+    <h1>Welcome to the Tribute Wall</h1>
+
+    <form action="/add_tribute" method="POST">
+        <label for="name">Pet's Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="message">Tribute Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+
+        <button type="submit">Add Tribute</button>
+    </form>
+
+    <hr>
+
+    <h2>Tributes</h2>
+    <ul>
+        {% for tribute in tributes %}
+            <li><strong>{{ tribute.name }}</strong>: {{ tribute.message }}</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
