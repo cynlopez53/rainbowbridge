@@ -8,6 +8,6 @@ app.register_blueprint(shop_bp)
 def home():
     return "Rainbow Bridge is alive 🌈"
 
-# 🔥 This goes at the very bottom
+# 🔥 This block is optional for local testing
 if __name__ == "__main__":
     app.run(debug=True, use_reloader=False)

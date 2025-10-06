@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vent & Heal</title>
+</head>
+<body>
+    <h1>💬 Vent & Heal</h1>
+    <p>This is a safe space to share your story, your grief, or your love. No judgment. Just hearts that understand.</p>
+
+    <form method="POST">
+        <textarea name="story" rows="6" cols="60" placeholder="Write your story here..." required></textarea><br><br>
+        <button type="submit">Share</button>
+    </form>
+
+    <hr>
+
+    <h2>🕊️ Shared Stories</h2>
+    {% for post in vent_posts %}
+        <div>
+            <p>{{ post }}</p>
+            <hr>
+        </div>
+    {% endfor %}
+</body>
+</html>

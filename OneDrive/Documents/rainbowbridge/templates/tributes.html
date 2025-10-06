@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tribute Wall</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <a href="/vent" class="vent-button">💬 Need to vent? Share your story here</a>
+</head>
+<body>
+    <h1>🌈 Rainbow Bridge Tribute Wall</h1>
+
+    <form method="POST" action="">
+        <label for="name">Your Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="message">Tribute Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+
+        <button type="submit">Submit Tribute</button>
+    </form>
+
+    <hr>
+
+    <h2>💖 Shared Tributes</h2>
+    {% for tribute in tributes %}
+        <div class="tribute">
+            <strong>{{ tribute.name }}</strong> says:<br>
+            <em>{{ tribute.message }}</em>
+        </div>
+        <hr>
+    {% endfor %}
+</body>
+</html>
