@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rainbow Bridge Store</title>
+</head>
+<body>
+    <h1>🛍️ Symbolic Gifts</h1>
+    <p>Choose a gift to place on your tribute or send to someone grieving.</p>
+
+    <ul>
+        {% for item in items %}
+            <li>
+                <img src="{{ url_for('static', filename=item.image) }}" alt="{{ item.name }}" width="100"><br>
+                <strong>{{ item.name }}</strong> - {{ item.price }}<br>
+                <button>Add to Tribute</button>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

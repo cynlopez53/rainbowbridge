@@ -14,3 +14,11 @@ def vent():
         vent_posts.append(story)
         return redirect("/shop/vent")
     return render_template("vent.html", vent_posts=vent_posts)
+@shop_bp.route('/store')
+def store():
+    items = [
+        {"name": "Plushie", "image": "plushie.png", "price": "$2"},
+        {"name": "Wings", "image": "wings.png", "price": "$3"},
+        {"name": "Candle", "image": "candle.png", "price": "$1"},
+    ]
+    return render_template("store.html", items=items)
